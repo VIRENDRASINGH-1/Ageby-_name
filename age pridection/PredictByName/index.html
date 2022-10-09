@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict By Name</title>
+    <link rel="stylesheet" href="./style.css">
+    <script defer src="./scripts/ISOtoCountryName.js"></script>
+    <script defer src="./scripts/Predict.js"></script>
+    <script defer src="./scripts/Validator.js"></script>
+</head>
+<body>
+    <h1>Predict by Name</h1>
+    <form>
+        <fieldset id="input-fieldset">
+            <legend>Input</legend>
+            <input type="text" placeholder="Name">
+            <input type="submit" value="Predict">
+        </fieldset>
+        <fieldset id="output-fieldset" style="display:none">
+            <legend>Output</legend>
+            <div id="output-container"></div>
+        </fieldset>
+    </form>
+    <footer>
+        <p>Created by <a href="https://localhost:5000">VIRENDRA SINGH</a></p>
+        <p>
+            <a href="https://agify.io/">agify.io</a> |
+            <a href="https://genderize.io/">genderize.io</a> |
+            <a href="https://nationalize.io/">nationalize.io</a>
+        </p>
+    </footer>
+</body>
+<script>
+    /* INITALIZE THE SUBMIT BUTTON */
+    const nameInput    = document.querySelector("input[type=text]");
+    const submitButton = document.querySelector("input[type=submit]");
+
+    submitButton.addEventListener("click", e => {
+        Predict(nameInput.value);
+        e.preventDefault();
+    });
+</script>
+</html>
